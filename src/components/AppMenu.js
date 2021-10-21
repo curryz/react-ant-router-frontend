@@ -8,6 +8,7 @@ import {
 import React from 'react';
 import { Link, HashRouter as Router, Route } from 'react-router-dom';
 import HomePage from '../contains/HomePage';
+import BMap from '../contains/BMap';
 import BlurExample from '../blurExample';
 import '../index.css';
 import IdolListPage from '../contains/list';
@@ -31,30 +32,30 @@ class AppMenus extends React.Component {
             <Router>
                 <Layout>
                     <Header>
-                        <div className="logo">学无止境</div>
+                        <div className="logo">技术测试大全</div>
                     </Header>
                     <Layout>
                         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
                             <div className="logo" />
                             <Menu theme="dark" defaultSelectedKeys={['1']} defaultOpenKeys={['1']} mode="inline">
                                 <Menu.Item key="1" icon={<PieChartOutlined />}>
-                                    <Link to="/">现代诗歌</Link>
+                                    <Link to="/">React</Link>
                                 </Menu.Item>
                                 <Menu.Item key="2" icon={<DesktopOutlined />}>
-                                <Link to="/blur/exmaple">古诗词</Link>
+                                <Link to="/blur/exmaple">Redux</Link>
                                 </Menu.Item>
-                                <SubMenu key="sub1" icon={<UserOutlined />} title="散文">
+                                <SubMenu key="sub1" icon={<UserOutlined />} title="Router">
                                     <Menu.Item key="3">
-                                    <Link to="/idol/list/page">迟子建</Link></Menu.Item>
+                                    <Link to="/idol/list/page">Dom</Link></Menu.Item>
                                     <Menu.Item key="4">
-                                    <Link to="/idol/list/page">冰心</Link></Menu.Item>
+                                    <Link to="/idol/list/page">auto</Link></Menu.Item>
                                     <Menu.Item key="5">
-                                    <Link to="/idol/list/page">林清玄</Link></Menu.Item>
+                                    <Link to="/idol/list/page">Data</Link></Menu.Item>
                                 </SubMenu>
-                                <SubMenu key="sub2" icon={<LikeOutlined />} title="书法">
-                                    <Menu.Item key="6">欧体</Menu.Item>
-                                    <Menu.Item key="8">颜体</Menu.Item>
-                                    <Menu.Item key="9">瘦金体</Menu.Item>
+                                <SubMenu key="sub2" icon={<LikeOutlined />} title="视图">
+                                    <Menu.Item key="6"><Link to="/bMap">BMapBox Base</Link></Menu.Item>
+                                    <Menu.Item key="8">BMapBox Manual</Menu.Item>
+                                    <Menu.Item key="9">BMapBox GL</Menu.Item>
                                 </SubMenu>
                                 <Menu.Item key="10" icon={<UserOutlined />}>
                                     <Link to="/idol/list/page">Self Files</Link>
@@ -73,6 +74,7 @@ class AppMenus extends React.Component {
                                 }}
                             >
                                 <Route exact path="/" component={ HomePage } />
+                                <Route exact path="/bMap" component={ BMap } />
                                 <Route exact path="/blur/exmaple" component={ BlurExample } />
                                 <Route exact path="/idol/list/page" component={ IdolListPage } />
                                 
